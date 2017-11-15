@@ -17,6 +17,10 @@
 @mixin full-width {
   grid-column: 1 / 7;
 }
+@mixin ink-text {
+  color: rgba(30,35,35,0.85);
+  text-shadow:0px 0px 5px  rgba(128,128,128,0.85);
+}
 
 /* General Formatting */
 .App {
@@ -26,55 +30,69 @@
   grid-template-columns: repeat(6, minmax(100px, 1fr));
   grid-column-gap: 4px;
 
-  header, footer {
+  header {
     @include full-width;
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    
     .App-logo {
-      flex: 1;
       animation: App-logo-spin infinite 20s linear;
       height: 80px;
     }
-    .App-title {
-      flex: 5;
+
+    h1 {
+      font-family: selimaregular;
+      font-size:8em;
+      padding: 0px;
+      margin:0px;
+      @include ink-text;
     }
+
   }
 
-  .sidebar {
-    grid-column: 1 / 2;
+  footer {
+    @include full-width;
+    align-items: center;
   }
 
   main {
-    grid-column: 2 / 7;
-  }
-
-}
-
-header.App-header {
-  background-color: #8f8f8f;
-
-  h1.App-title {
-    font-family: selimaregular;
-    font-size:8em;
-    padding: 0px;
-    margin:0px;
-    color: rgba(255,255,255,0.85);
-    text-shadow:0px 0px 25px  rgba(128,128,128,0.85);
+    @include full-width;
   }
 }
 
 
 /* Wish List Items */
-.wish-items, .detail {
+.wish-items {
   //reset
   margin:0px;
   padding:0px;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   
-  .detail {
+  >li {
     flex: 1;
   }
-  li {
+
+  .detail {
+    padding: 5px;
+    margin: 0px;
+    list-style-type: none;
+
+    &:hover {
+      background-color: whitesmoke;
+      cursor: pointer;
+    }
+
+    .price {
+      position: relative;
+      top: -25px;
+      font-weight: 600;
+      font-size: 1.4em;
+      background-color: #8f8f8f;
+    }
 
   }
 }
