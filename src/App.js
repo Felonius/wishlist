@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+/*import './App.css';*/
 import List from './components/List';
 import './resources/css/App.css';
 
@@ -67,8 +67,8 @@ class App extends Component {
           <h2>Page title here</h2>
           <article>
             <p>Here's some text in an article.</p>
-            <List {...dummyList} />
           </article>
+          <List {...dummyList} />
         </main>
         <footer>
           <p>

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Item extends Component {
   render() {
     return (
-      <li className='wish'>
-      <ul className='details'>
+      <li className='wish-item'>
+      <ul className='detail'>
         <li><h3>{this.props.item.name}</h3></li>
         <li><a href={this.props.item.url}>{this.props.item.location}</a></li>
         <li><img width="150" src={this.props.item.img} alt={this.props.name} /></li>

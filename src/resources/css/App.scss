@@ -7,17 +7,74 @@
   font-style: normal;
 }
 
-header {
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
- h1.App-title {
-  font-family: selimaregular;
-  font-size:14em;
-  padding: 0px;
-  margin: 0px;
-  color: rgba(255,255,255,0.75);
-  text-shadow:0px 0px 25px  rgba(128,128,128,0.75);
+
+/* mixins */
+@mixin full-width {
+  grid-column: 1 / 7;
+}
+
+/* General Formatting */
+.App {
+  display: grid;
+  grid-template-rows:175px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+  grid-column-gap: 4px;
+
+  header, footer {
+    @include full-width;
+    display: flex;
+    .App-logo {
+      flex: 1;
+      animation: App-logo-spin infinite 20s linear;
+      height: 80px;
+    }
+    .App-title {
+      flex: 5;
+    }
   }
-  .App-logo {
-    float:left;
+
+  .sidebar {
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 7;
+  }
+
+}
+
+header.App-header {
+  background-color: #8f8f8f;
+
+  h1.App-title {
+    font-family: selimaregular;
+    font-size:8em;
+    padding: 0px;
+    margin:0px;
+    color: rgba(255,255,255,0.85);
+    text-shadow:0px 0px 25px  rgba(128,128,128,0.85);
+  }
+}
+
+
+/* Wish List Items */
+.wish-items, .detail {
+  //reset
+  margin:0px;
+  padding:0px;
+  list-style-type: none;
+  display: flex;
+  
+  .detail {
+    flex: 1;
+  }
+  li {
+
   }
 }

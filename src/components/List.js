@@ -5,10 +5,10 @@ import Item from './Item';
 class List extends Component {
   render() {
     return (
-      <article>
+      <article className='wish'>
         <h3>{this.props.name}</h3>
         <p>{this.props.description}</p>
-        <ul className='list_container'>
+        <ul className='wish-items'>
         {this.props.list.map((listItem, i) => 
           <Item item={listItem} />
         )}
