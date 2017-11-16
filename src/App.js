@@ -60,9 +60,6 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">WishList</h1>
         </header>
-        <aside className='sidebar'>
-          <p>Sidebar content</p>
-        </aside>
         <main>
           <h2>Page title here</h2>
           <article>

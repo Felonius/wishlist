@@ -6,10 +6,10 @@ class Item extends Component {
     return (
       <li className='wish-item'>
       <ul className='detail'>
-        <li><h3>{this.props.item.name}</h3></li>
-        <li><a href={this.props.item.url}>{this.props.item.location}</a></li>
-        <li><img width="150" src={this.props.item.img} alt={this.props.name} /></li>
-        <li>{new Intl.NumberFormat('EN-au', {style: 'currency', currency: 'AUD'}).format(this.props.item.price)}</li>
+        <li className='name'><h3>{this.props.item.name}</h3></li>
+        <li className='url'><a href={this.props.item.url}>{this.props.item.location}</a></li>
+        <li className='img'><img width="150" src={this.props.item.img} alt={this.props.name} /></li>
+        <li className='price'>{new Intl.NumberFormat('EN-au', {style: 'currency', currency: 'AUD'}).format(this.props.item.price)}</li>
       </ul></li>
     )
   };
