@@ -57,8 +57,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">WishList</h1>
+          <div className='banner'>
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">WishList</h1>
+          </div>
           <nav>
             <ul>
             <li><a href='/'>Home</a></li>
