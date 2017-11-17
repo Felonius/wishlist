@@ -88,6 +88,11 @@ header {
         font-size: 1.0em;
         padding:5px;
         color: whitesmoke;
+
+        &.active {
+          text-decoration: none;
+          color: #aeaeae;
+        }
       }
     }
   }
