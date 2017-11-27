@@ -3,9 +3,11 @@ import Wish from './components/Wish';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './resources/css/App.css';
+import store from './store';
 
 class App extends Component {
   render() {
+    const wishes = store.getState();
     return (
       <div className="App">
         <Header />
@@ -14,7 +16,7 @@ class App extends Component {
             <h2>Page title here</h2>
             <p>Here's some text in an article.</p>
           </article>
-          <Wish />
+          <Wish title={wishes.title} description={wishes.description} />
         </main>
         <Footer />
       </div>
