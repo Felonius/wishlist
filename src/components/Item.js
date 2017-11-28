@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import store from '../store';
-import { deleteFromList } from '../actions/list-actions';
 
 class Item extends Component {
-  handleDelete(id) {
-    store.dispatch(deleteFromList(id));
-    console.log(store.getState());
-  }
   render() {
     const item = this.props.item;
     return (
@@ -18,7 +12,7 @@ class Item extends Component {
           <a href={item.url}>{item.location}</a>
           <i className='price'>{new Intl.NumberFormat('EN-au', {style: 'currency', currency: 'AUD'}).format(item.price)}</i>
         </div>
-        <button onClick={this.handleDelete.bind(this,item.id)}>X</button>
+        <button onClick={this.props.onDelete.bind(this,item.id)}>X</button>
       </li>
     )
   };
@@ -27,6 +21,7 @@ Item.PropTypes = {
   item: PropTypes.object,
   key: PropTypes.number,
   id: PropTypes.number,
+  onDelete: PropTypes.func,
 }
 
 export default Item;

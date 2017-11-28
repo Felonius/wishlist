@@ -7,7 +7,7 @@ import store from './store';
 
 class App extends Component {
   render() {
-    const wishes = store.getState();
+    const wishes = store.getState().wishes.wishes;
     return (
       <div className="App">
         <Header />
@@ -16,7 +16,9 @@ class App extends Component {
             <h2>Page title here</h2>
             <p>Here's some text in an article.</p>
           </article>
-          <Wish title={wishes.title} description={wishes.description} />
+          {wishes.map((wish) => 
+            <Wish key={wish.id} id={wish.id} title={wish.title} description={wish.description} />
+          )}
         </main>
         <Footer />
       </div>
