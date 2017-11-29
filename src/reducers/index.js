@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import wishReducer from './wish-reducer';
-import listReducer from './list-reducer';
+import itemReducer from './item-reducer';
 
 const allReducers = {
   wishes: wishReducer,
-  lists: listReducer,
+  items: itemReducer,
 }
 
 const rootReducer = combineReducers(allReducers);

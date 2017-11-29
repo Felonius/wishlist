@@ -7,7 +7,7 @@ import store from './store';
 
 class App extends Component {
   render() {
-    const wishes = store.getState().wishes.wishes;
+    const wishes = store.getState().wishes;
     return (
       <div className="App">
         <Header />
