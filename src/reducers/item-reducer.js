@@ -79,10 +79,9 @@ const initialState =
 export default function (state=initialState, action) {
   switch (action.type) {
     case FILTER_ITEMS: {
-      return {
-        ...state,
-        one: state.filter(item => item.wishId === action.payload.wishId)
-      }
+      return (
+        state.filter(item => item.wishId === action.payload.wishId)
+      )
     }
 
     case ADD_ITEM: {

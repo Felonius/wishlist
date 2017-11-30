@@ -1,8 +1,12 @@
-export const ADD_TO_WISH = 'ADD_TO_WISH';
+let nextWishId = 2
 
-export function addToWish(title, description) {
+export const ADD_WISH = 'ADD_WISH';
+
+export function addWish(title, description) {
+  nextWishId++;
+
   return {
-    type: ADD_TO_WISH,
-    payload: { title, description }
+    type: ADD_WISH,
+    payload: { id: nextWishId, title, description }
   }
 }

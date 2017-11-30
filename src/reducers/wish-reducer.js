@@ -1,4 +1,4 @@
-import { ADD_TO_WISH } from '../actions/wish-actions';
+import { ADD_WISH } from '../actions/wish-actions';
 
 const initialState = [
   {
@@ -15,12 +15,13 @@ const initialState = [
 
 export default function (state=initialState, action) {
   switch (action.type) {
-    case ADD_TO_WISH: {
+    case ADD_WISH: {
       return {
         ...state,
         wishes: [...state, action.payload]
       }
     }
+    
     default:
       return state;
   }
