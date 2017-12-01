@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import List from './List';
 
-class Wish extends Component {
-
-  render() {
-    return (
-      <div className='wish'>
-        <h2>{this.props.title}</h2>
-        <p>{this.props.description}</p>
-        <List 
-          wishId={this.props.id} />
-      </div>
-    );
-  }
+const Wish = (props) => {
+  return (
+    <div className='wish'>
+      <button className='addButton'>+ New wish</button>  
+      <h2>{props.title}</h2>
+      <p>{props.description}</p>
+      <List 
+        wishId={props.id} />
+    </div>
+  );
 }
+
 Wish.PropTypes = {
   id: PropTypes.number,
   title: PropTypes.string,

@@ -4,10 +4,12 @@ import * as wishActions from '../actions/wish-actions';
 import Wish from './Wish';
 
 class Wishlist extends Component {
+  handleAddWish(){
+
+  }
   render() {
-    const wishes = this.props.wishes;
     return (
-      wishes.map((wish) => 
+      this.props.wishes.map((wish) => 
         <Wish 
           key={wish.id} 
           {...wish} />

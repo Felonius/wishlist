@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as itemActions from '../actions/item-actions';
 import PropTypes from 'prop-types';
 import Item from './Item';
-import { deleteItem } from '../actions/item-actions';
 
 class List extends Component {
 
@@ -13,7 +12,7 @@ class List extends Component {
   
   render() {
     const items = 
-      this.props.items.filter(item => item.wishId !== this.props.wishId)
+      this.props.items.filter(item => item.wishId === this.props.wishId)
         .map((listItem) => 
           <Item key={listItem.id} item={listItem} onDelete={this.handleDelete.bind(this)} />
     );
